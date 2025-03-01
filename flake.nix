@@ -71,6 +71,12 @@
 
       systems.modules.nixos = with inputs; [
         home-manager.nixosModules.home-manager
+        stylix.nixosModules.stylix
+        niri.nixosModules.niri
+      ];
+
+      systems.modules.home-manager = with inputs; [
+        nvf.homeManagerModule.default
       ];
 
       #####   systems.hosts.laptop.modules = with inputs; [
