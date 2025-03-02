@@ -39,13 +39,13 @@ in
     assertions = mapAttrsToList
       (name: value: {
         assertion = value.key != null;
-        message = "plusultra.nix.extra-substituters.${name}.key must be set";
+        message = "crate.nix.extra-substituters.${name}.key must be set";
       })
       cfg.extra-substituters;
 
     environment.systemPackages = with pkgs; [
-      plusultra.nixos-revision
-      (plusultra.nixos-hosts.override { hosts = inputs.self.nixosConfigurations; })
+      crate.nixos-revision
+      (crate.nixos-hosts.override { hosts = inputs.self.nixosConfigurations; })
       deploy-rs
       nixfmt-rfc-style
       nix-index

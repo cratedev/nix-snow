@@ -193,9 +193,9 @@ in
       ]
       ++ cfg.extra-packages;
 
-    plusultra.user.extraGroups = [ "audio" ];
+    crate.user.extraGroups = [ "audio" ];
 
-    plusultra.home.extraOptions = {
+    crate.home.extraOptions = {
       systemd.user.services.mpris-proxy = {
         Unit.Description = "Mpris proxy";
         Unit.After = [

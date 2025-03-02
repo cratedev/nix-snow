@@ -36,7 +36,7 @@ in
       8081
     ];
 
-    plusultra = {
+    crate = {
       inherit apps cli-apps;
 
       tools = {

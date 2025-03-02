@@ -1,9 +1,8 @@
 {
   lib,
-  osConfig ? { },
+  osConfig ? {},
   namespace,
   ...
-}:
-{
-  home.stateVersion = lib.mkDefault (osConfig.system.stateVersion or "23.11");
+}: {
+  home.stateVersion = lib.mkDefault (osConfig.system.stateVersion or "24.11");
 }

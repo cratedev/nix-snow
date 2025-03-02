@@ -106,7 +106,7 @@ in
       };
     };
 
-    plusultra = {
+    crate = {
       home.file = {
         ".gnupg/.keep".text = "";
 

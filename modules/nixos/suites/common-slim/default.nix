@@ -17,9 +17,9 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [ pkgs.plusultra.list-iommu ];
+    environment.systemPackages = [ pkgs.crate.list-iommu ];
 
-    plusultra = {
+    crate = {
       nix = enabled;
 
       # TODO: Enable this once Attic is configured again.

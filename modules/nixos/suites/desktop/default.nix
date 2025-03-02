@@ -17,7 +17,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    plusultra = {
+    crate = {
       desktop = {
         gnome = enabled;
 

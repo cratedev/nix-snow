@@ -42,7 +42,7 @@ in
       };
     };
 
-    plusultra = {
+    crate = {
       tools = {
         icehouse = enabled;
       };

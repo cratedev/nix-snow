@@ -17,7 +17,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    plusultra.suites = {
+    crate.suites = {
       common = enabled;
       desktop = enabled;
       games = enabled;

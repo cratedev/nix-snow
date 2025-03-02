@@ -2,14 +2,13 @@
   lib,
   pkgs,
   config,
-  osConfig ? { },
+  osConfig ? {},
   format ? "unknown",
   namespace,
   ...
 }:
-with lib.${namespace};
-{
-  plusultra = {
+with lib.${namespace}; {
+  crate = {
     cli-apps = {
       zsh = enabled;
       neovim = enabled;

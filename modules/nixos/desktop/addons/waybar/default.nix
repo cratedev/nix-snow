@@ -19,7 +19,7 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [ waybar ];
 
-    plusultra.home.configFile."waybar/config".source = ./config;
-    plusultra.home.configFile."waybar/style.css".source = ./style.css;
+    crate.home.configFile."waybar/config".source = ./config;
+    crate.home.configFile."waybar/style.css".source = ./style.css;
   };
 }

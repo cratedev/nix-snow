@@ -86,9 +86,9 @@ in
       ${optionalString cfg.manage-other-hosts other-hosts-config}
     '';
 
-    plusultra.user.extraOptions.openssh.authorizedKeys.keys = cfg.authorizedKeys;
+    crate.user.extraOptions.openssh.authorizedKeys.keys = cfg.authorizedKeys;
 
-    plusultra.home.extraOptions = {
+    crate.home.extraOptions = {
       programs.zsh.shellAliases = foldl (
         aliases: system: aliases // { "ssh-${system}" = "ssh ${system} -t tmux a"; }
       ) { } (builtins.attrNames other-hosts);

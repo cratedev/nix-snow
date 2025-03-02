@@ -5,11 +5,11 @@
   pkgs,
   namespace,
   ...
-}:
-let
+}: let
   cfg = config.${namespace}.desktop.hyprland;
 
-  inherit (lib)
+  inherit
+    (lib)
     mkIf
     mkEnableOption
     mkOption
@@ -34,8 +34,7 @@ let
         ;;
     esac
   '';
-in
-{
+in {
   options.${namespace}.desktop.hyprland = {
     enable = mkEnableOption "Hyprland";
 
@@ -51,13 +50,13 @@ in
         types.path
         types.str
       ];
-      default = pkgs.plusultra.wallpapers.nord-rainbow-dark-nix;
+      default = pkgs.crate.wallpapers.nord-rainbow-dark-nix;
       description = "The wallpaper to use.";
     };
 
     settings = mkOption {
       type = types.attrs;
-      default = { };
+      default = {};
       description = "Extra Hyprland settings to apply.";
     };
   };
@@ -77,7 +76,7 @@ in
 
     environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
 
-    security.pam.services.hyprlock = { };
+    security.pam.services.hyprlock = {};
 
     services.greetd = {
       enable = true;
@@ -92,15 +91,15 @@ in
 
     programs.dconf = enabled;
 
-    plusultra = {
+    crate = {
       system.xkb.enable = true;
       desktop.addons = {
         gtk = enabled;
         wallpapers = enabled;
         electron-support = enabled;
         foot = enabled;
-        clipboard = enabled;
-        firefox-nordic-theme = enabled;
+        #        clipboard = enabled;
+        #        firefox-nordic-theme = enabled;
         ags = {
           # bar = enabled;
         };
@@ -279,9 +278,9 @@ in
                   ", XF86AudioRaiseVolume, exec, volumectl up 5"
                 ];
 
-                windowrule = [ ];
+                windowrule = [];
 
-                layerrule = [ "noanim, ^avalanche-" ];
+                layerrule = ["noanim, ^avalanche-"];
 
                 # Programs to run on startup
                 exec-once =
@@ -290,7 +289,7 @@ in
                     # "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
                   ]
                   ++ optional config.${namespace}.desktop.addons.gtk.enable
-                    "${cfg.package}/bin/hyprctl setcursor \"${config.${namespace}.desktop.addons.gtk.cursor.name}\" 16";
+                  "${cfg.package}/bin/hyprctl setcursor \"${config.${namespace}.desktop.addons.gtk.cursor.name}\" 16";
 
                 # Decorations
                 decoration = {

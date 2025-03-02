@@ -30,7 +30,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    plusultra = {
+    crate = {
       inherit apps cli-apps;
     };
   };

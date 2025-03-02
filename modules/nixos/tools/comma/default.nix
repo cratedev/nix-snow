@@ -19,10 +19,10 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       comma
-      plusultra.nix-update-index
+      crate.nix-update-index
     ];
 
-    plusultra.home = {
+    crate.home = {
       configFile = {
         "wgetrc".text = "";
       };

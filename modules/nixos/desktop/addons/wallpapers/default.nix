@@ -10,7 +10,7 @@ with lib;
 with lib.${namespace};
 let
   cfg = config.${namespace}.desktop.addons.wallpapers;
-  inherit (pkgs.plusultra) wallpapers;
+  inherit (pkgs.crate) wallpapers;
 in
 {
   options.${namespace}.desktop.addons.wallpapers = with types; {
@@ -18,7 +18,7 @@ in
   };
 
   config = {
-    plusultra.home.file = lib.foldl (
+    crate.home.file = lib.foldl (
       acc: name:
       let
         wallpaper = wallpapers.${name};
