@@ -7,11 +7,9 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.archetypes.server;
-in
-{
+in {
   options.${namespace}.archetypes.server = with types; {
     enable = mkBoolOpt false "Whether or not to enable the server archetype.";
   };
@@ -22,10 +20,10 @@ in
         common-slim = enabled;
       };
 
-      cli-apps = {
-        neovim = enabled;
-        tmux = enabled;
-      };
+      #      cli-apps = {
+      #        neovim = enabled;
+      #        tmux = enabled;
+      #      };
     };
   };
 }

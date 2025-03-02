@@ -17,7 +17,7 @@ in {
   config = mkIf cfg.enable {
     crate = {
       desktop = {
-        gnome = enabled;
+        #        gnome = enabled;
 
         addons = {
           wallpapers = enabled;

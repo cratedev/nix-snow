@@ -7,17 +7,15 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.suites.common;
-in
-{
+in {
   options.${namespace}.suites.common = with types; {
     enable = mkBoolOpt false "Whether or not to enable common configuration.";
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [ pkgs.crate.list-iommu ];
+    environment.systemPackages = [pkgs.crate.list-iommu];
 
     crate = {
       nix = enabled;
@@ -25,18 +23,16 @@ in
       # TODO: Enable this once Attic is configured again.
       # cache.public = enabled;
 
-      cli-apps = {
-        flake = enabled;
-        thaw = enabled;
-      };
+      #      cli-apps = {
+      #        flake = enabled;
+      #        thaw = enabled;
+      #      };
 
       tools = {
         git = enabled;
-        misc = enabled;
-        fup-repl = enabled;
+        #        misc = enabled;
         comma = enabled;
-        nix-ld = enabled;
-        bottom = enabled;
+        #        bottom = enabled;
       };
 
       hardware = {
@@ -46,7 +42,7 @@ in
       };
 
       services = {
-        printing = enabled;
+        #        printing = enabled;
         openssh = enabled;
         tailscale = enabled;
       };

@@ -19,16 +19,16 @@ in {
       suites = {
         common = enabled;
         desktop = enabled;
-        development = enabled;
+        #        development = enabled;
         #        art = disabled;
         video = enabled;
         social = enabled;
         media = enabled;
       };
 
-      cli-apps = {
-        nvf = enabled;
-      };
+      #      cli-apps = {
+      #        nvf = enabled;
+      #      };
 
       tools = {
         #        appimage-run = enabled;

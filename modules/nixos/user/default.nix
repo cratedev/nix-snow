@@ -13,7 +13,7 @@ with lib.${namespace}; let
   defaultIcon = pkgs.stdenvNoCC.mkDerivation {
     name = "default-icon";
     src = ./. + "/${defaultIconFileName}";
-
+    #
     dontUnpack = true;
 
     installPhase = ''

@@ -38,6 +38,18 @@
     # Comma
     comma.url = "github:nix-community/comma";
     comma.inputs.nixpkgs.follows = "unstable";
+
+    # System Deployment
+    deploy-rs.url = "github:serokell/deploy-rs";
+    deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
+
+    stylix.url = "github:danth/stylix";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    niri.url = "github:sodiboo/niri-flake";
+    nvf.url = "github:notashelf/nvf";
+    nvf.inputs.nixpkgs.follows = "nixpkgs";
+    ghostty.url = "github:ghostty-org/ghostty";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs = inputs: let

@@ -70,7 +70,6 @@ in {
       glib
       gtk3.out
       gnome.gnome-control-center
-      ags
       libdbusmenu-gtk3
     ];
 
@@ -94,15 +93,15 @@ in {
     crate = {
       system.xkb.enable = true;
       desktop.addons = {
-        gtk = enabled;
+        #        gtk = enabled;
         wallpapers = enabled;
-        electron-support = enabled;
-        foot = enabled;
+        #        electron-support = enabled;
+        #        foot = enabled;
         #        clipboard = enabled;
         #        firefox-nordic-theme = enabled;
-        ags = {
-          # bar = enabled;
-        };
+        #        ags = {
+        # bar = enabled;
+        #        };
       };
 
       home = {

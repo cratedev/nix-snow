@@ -7,17 +7,15 @@
   ...
 }:
 with lib;
-with lib.${namespace};
-let
+with lib.${namespace}; let
   cfg = config.${namespace}.suites.common-slim;
-in
-{
+in {
   options.${namespace}.suites.common-slim = with types; {
     enable = mkBoolOpt false "Whether or not to enable common-slim configuration.";
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [ pkgs.crate.list-iommu ];
+    environment.systemPackages = [pkgs.crate.list-iommu];
 
     crate = {
       nix = enabled;
@@ -25,17 +23,15 @@ in
       # TODO: Enable this once Attic is configured again.
       # cache.public = enabled;
 
-      cli-apps = {
-        flake = enabled;
-        thaw = enabled;
-      };
+      #      cli-apps = {
+      #        flake = enabled;
+      #        thaw = enabled;
+      #      };
 
       tools = {
         git = enabled;
-        fup-repl = enabled;
         comma = enabled;
-        bottom = enabled;
-        direnv = enabled;
+        #        bottom = enabled;
       };
 
       hardware = {
