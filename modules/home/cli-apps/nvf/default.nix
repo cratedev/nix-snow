@@ -15,8 +15,8 @@ in {
   };
 
   config = mkIf cfg.enable {
-    programs = {
-      nvf = enabled;
+    programs.nvf = {
+      enable = true;
       settings.vim = {
         options = {
           tabstop = 2;
