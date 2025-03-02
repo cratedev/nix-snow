@@ -10,14 +10,13 @@
 with lib.${namespace}; {
   crate = {
     cli-apps = {
-      zsh = enabled;
-      neovim = enabled;
+      #      zsh = enabled;
+      nvf = enabled;
       home-manager = enabled;
     };
 
     tools = {
-      git = enabled;
-      direnv = enabled;
+      #      git = enabled;
     };
   };
 }

@@ -77,14 +77,14 @@ in {
 
     security.pam.services.hyprlock = {};
 
-    services.greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = "${lib.getExe pkgs.greetd.tuigreet} --cmd Hyprland";
-        };
-      };
-    };
+    #    services.greetd = {
+    #      enable = true;
+    #      settings = {
+    #        default_session = {
+    #          command = "${lib.getExe pkgs.greetd.tuigreet} --cmd Hyprland";
+    #        };
+    #      };
+    #    };
 
     services.upower = enabled;
 

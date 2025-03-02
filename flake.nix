@@ -3,13 +3,10 @@
 
   inputs = {
     # NixPkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-
-    # NixPkgs Unstable
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Home Manager
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Hardware Configuration
@@ -26,7 +23,7 @@
 
     # Snowfall Flake
     flake.url = "github:snowfallorg/flake?ref=v1.4.1";
-    flake.inputs.nixpkgs.follows = "unstable";
+    flake.inputs.nixpkgs.follows = "nixpkgs";
 
     # Snowfall Thaw
     thaw.url = "github:snowfallorg/thaw?ref=v1.0.7";
@@ -37,7 +34,7 @@
 
     # Comma
     comma.url = "github:nix-community/comma";
-    comma.inputs.nixpkgs.follows = "unstable";
+    comma.inputs.nixpkgs.follows = "nixpkgs";
 
     # System Deployment
     deploy-rs.url = "github:serokell/deploy-rs";
