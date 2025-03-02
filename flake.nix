@@ -84,8 +84,16 @@
         niri.nixosModules.niri
       ];
 
-      systems.modules.home-manager = with inputs; [
-        nvf.homeManagerModule.default
+      #      systems.modules.home-manager = with inputs; [
+      #        nvf.homeManagerModules.default
+      #      ];
+
+      #      home.modules = with inputs; [
+      #        nvf.homeManagerModules.default
+      #      ];
+
+      systems.hosts.crate-desktop.modules = with inputs; [
+        nvf.homeManagerModules.default
       ];
 
       #####   systems.hosts.laptop.modules = with inputs; [

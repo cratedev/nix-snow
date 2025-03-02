@@ -15,8 +15,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    programs.nvf = {
-      enable = true;
+    programs.nvf = lib.recursiveUpdate enabled {
       settings.vim = {
         options = {
           tabstop = 2;
