@@ -82,6 +82,7 @@
         home-manager.nixosModules.home-manager
         stylix.nixosModules.stylix
         niri.nixosModules.niri
+        nvf.nixosModules.default
       ];
 
       #      systems.modules.home-manager = with inputs; [
@@ -92,9 +93,9 @@
       #        nvf.homeManagerModules.default
       #      ];
 
-      systems.hosts.crate-desktop.modules = with inputs; [
-        nvf.homeManagerModules.default
-      ];
+      #      systems.hosts.crate-desktop.modules = with inputs; [
+      #        nvf.homeManagerModules.default
+      #      ];
 
       #####   systems.hosts.laptop.modules = with inputs; [
       #			#TODO: laptop specific config ## nixos-hardware.nixosModules.framework-11th-gen-intel
