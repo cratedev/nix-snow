@@ -43,8 +43,8 @@ in {
       cfg.extra-substituters;
 
     environment.systemPackages = with pkgs; [
-      crate.nixos-revision
-      (crate.nixos-hosts.override {hosts = inputs.self.nixosConfigurations;})
+      #      crate.nixos-revision
+      #      (crate.nixos-hosts.override {hosts = inputs.self.nixosConfigurations;})
       deploy-rs
       nixfmt-rfc-style
       nix-index
